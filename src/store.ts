@@ -16,7 +16,7 @@ export interface Store {
   events: Table<DeliveryEvent>;
 }
 
-// ponytail: where() varre a tabela inteira; num banco vira índice por delivery_id/version_id.
+// Simplificação: where() varre a tabela inteira; num banco vira índice por delivery_id/version_id.
 class MemoryTable<T extends { id: string }> implements Table<T> {
   private rows = new Map<string, T>();
   get(id: string) {
